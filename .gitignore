@@ -1,0 +1,9 @@
+*.o
+*.elf
+*.bin
+*.hex
+*.vcd
+*.log
+build/
+sim/
+work/
