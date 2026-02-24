@@ -1,0 +1,45 @@
+In file included from /usr/include/signal.h:328,
+                 from test/catch.hpp:6096,
+                 from test/test_suite.cpp:31:
+test/catch.hpp:8722:58: error: call to non-‘constexpr’ function ‘long int sysconf(int)’
+ 8722 |     constexpr static std::size_t sigStackSize = 32768 >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ;
+      |                                                          ^~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/sigstksz.h:24,
+                 from /usr/include/signal.h:328,
+                 from test/catch.hpp:6096,
+                 from test/test_suite.cpp:31:
+/usr/include/unistd.h:640:17: note: ‘long int sysconf(int)’ declared here
+  640 | extern long int sysconf (int __name) __THROW;
+      |                 ^~~~~~~
+In file included from test/test_suite.cpp:31:
+test/catch.hpp:8781:45: error: size of array ‘altStackMem’ is not an integral constant-expression
+ 8781 |     char FatalConditionHandler::altStackMem[sigStackSize] = {};
+      |                                             ^~~~~~~~~~~~
+In file included from test/test_suite.cpp:41:
+test/../printf.c: In function ‘size_t test::_ftoa(test::out_fct_type, char*, size_t, size_t, double, unsigned int, unsigned int, unsigned int)’:
+test/../printf.c:349:13: warning: comparing floating-point with ‘==’ or ‘!=’ is unsafe [-Wfloat-equal]
+  349 |   if (value != value)
+      |       ~~~~~~^~~~~~~~
+test/../printf.c: In function ‘size_t test::_etoa(test::out_fct_type, char*, size_t, size_t, double, unsigned int, unsigned int, unsigned int)’:
+test/../printf.c:470:14: warning: comparing floating-point with ‘==’ or ‘!=’ is unsafe [-Wfloat-equal]
+  470 |   if ((value != value) || (value > DBL_MAX) || (value < -DBL_MAX)) {
+      |        ~~~~~~^~~~~~~~
+test/../printf.c:564:61: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+  564 |     idx = _ntoa_long(out, buffer, idx, maxlen, (expval < 0) ? -expval : expval, expval < 0, 10, 0, minwidth-1, FLAGS_ZEROPAD | FLAGS_PLUS);
+      |                                                ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+test/test_suite.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____48()’:
+test/test_suite.cpp:1088:33: warning: implicit conversion from ‘float’ to ‘double’ when passing argument to function [-Wdouble-promotion]
+ 1088 |   test::sprintf(buffer, "%-8f", -INFINITY);
+      |                                 ^
+test/test_suite.cpp:1220:37: warning: implicit conversion from ‘float’ to ‘double’ when passing argument to function [-Wdouble-promotion]
+ 1220 |     test::sprintf(buffer, "%.5f", i / 10000);
+      |                                   ~~^~~~~~~
+test/test_suite.cpp:1231:27: warning: implicit conversion from ‘float’ to ‘double’ to match other operand of binary expression [-Wdouble-promotion]
+ 1231 |   for (float i = -1e20; i < 1e20; i += 1e15) {
+      |                         ~~^~~~~~
+test/test_suite.cpp:1231:37: warning: implicit conversion from ‘float’ to ‘double’ to match other operand of binary expression [-Wdouble-promotion]
+ 1231 |   for (float i = -1e20; i < 1e20; i += 1e15) {
+      |                                   ~~^~~~~~~
+test/test_suite.cpp:1232:35: warning: implicit conversion from ‘float’ to ‘double’ when passing argument to function [-Wdouble-promotion]
+ 1232 |     test::sprintf(buffer, "%.5f", i);
+      |                                   ^

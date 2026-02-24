@@ -1,0 +1,23 @@
+PW_4/pw4/virtualprototype/modules/gpio/verilog/ramDmaCi_24_tb.out
+PW_4/pw4/virtualprototype/modules/gpio/verilog/ramDmaCi_24_tb.vcd
+# Ignore common compilation files
+*.o
+*.out
+*.obj
+*.elf
+*.bin
+*.hex
+*.vcd
+*.log
+*.exe
+*.a
+*.so
+*.dll
+*.d
+*.dep
+*.map
+*.mod
+*.pyc
+__pycache__/
+build/
+dist/
